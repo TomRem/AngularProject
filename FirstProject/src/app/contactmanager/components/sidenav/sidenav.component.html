@@ -1,5 +1,5 @@
-<mat-drawer-container class="app-sidenav-container" autosize>
-  <mat-drawer #drawer class="app-sidenav" mode="side">
+<mat-sidenav-container class="app-sidenav-container" autosize>
+  <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" [opened]="!isScreenSmall()" [mode]="isScreenSmall()? 'over' : 'side'">
 
     <app-toolbar></app-toolbar>
     <router-outlet></router-outlet>
@@ -8,12 +8,12 @@
     <button (click)="showFiller = !showFiller" mat-raised-button>
       Cos dla Backendów!
     </button>
-  </mat-drawer>
+  </mat-sidenav>
 
   <div class="app-sidenav-content">
-    <button type="button" mat-flat-button (click)="drawer.toggle()">
+    <button type="button" mat-flat-button (click)="sidenav.toggle()">
       WELCOME TO MY WEBSITE
     </button>
   </div>
 
-</mat-drawer-container>
+</mat-sidenav-container>
